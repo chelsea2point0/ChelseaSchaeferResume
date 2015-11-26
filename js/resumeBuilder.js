@@ -16,7 +16,7 @@ var bio = {
 		"email" : "chelseajoyschaefer@gmail.com",
 		"github" : "chelsea2point0",
 		"twitter" : "@chels_schaefer",
-		"location" : "Manchester, NH"
+		"location" : "795 Elm St, Manchester, NH"
 	},
 	"welcomeMessage" : "Thank you for visiting my resume. I look forward to speaking with you soon.",
 	"skills" : [
@@ -33,7 +33,8 @@ var education = {
 		"degree": "Certificate",
 		"major": "Internet Application Development",
 		"dates": "August 2015 - December 2015",
-		"url": "http://www.nashuacc.edu"
+		"url": "http://www.nashuacc.edu",
+		"location": "505 Amherst St, Nashua, NH"
 	},
 	{
 		"name": "Assumption College",
@@ -41,7 +42,8 @@ var education = {
 		"degree": "Master of Arts",
 		"major": "School Counseling",
 		"dates": "September 2010 - May 2012",
-		"url": "http://www.assumption.edu"
+		"url": "http://www.assumption.edu",
+		"location": "500 Salisbury St, Worcester, MA"
 	},
 	{
 		"name": "University of New Hampshire",
@@ -49,7 +51,8 @@ var education = {
 		"degree": "Bachelor of Arts",
 		"major": "Psychology",
 		"dates": "September 2006 - May 2010",
-		"url": "http://www.unh.edu"
+		"url": "http://www.unh.edu",
+		"location": "105 Main St, Durham, NH"
 	}
 	]
 };
@@ -61,7 +64,7 @@ var work = {
 		"title": "Web Developer",
 		"dates": "July 2015 - Present",
 		"location": "Pine Hill Rd, Weare, NH",
-		"description": "Hired on contractual basis to update client's webpage. Recycled original webpage content but created a more visually appealing, user-friendly version using HTML, CSS, bootstrap and jQuery."
+		"description": "Hired on contractual basis to update client's webpage. Maintained original webpage content but created a more visually appealing, user-friendly version using HTML, CSS, bootstrap and jQuery."
 	},
 	{
 		"employer": "Southern New Hampshire University",
@@ -94,8 +97,8 @@ var projects = {
 		"dates": "July - August 2015",
 		"description": "Used HTML/CSS, bootstrap framework and jQuery library to update client's webpage in order to create a better user experience and attract new customers",
 		"images": [
-			"/images.homepage.PNG",
-			"/images.contactpage.PNG"
+			"/images/homepage.PNG",
+			"/images/contactpage.PNG"
 		]
 	},
 	{
@@ -103,8 +106,8 @@ var projects = {
 		"dates": "July 2015",
 		"description": "Project from Codecademy.com. Mock business homepage that incorporates HTML/CSS, JavaScript and jQuery.",
 		"images": [
-			"/images.innovationcloudheader.PNG",
-			"/images.innovationcloud.PNG"
+			"/images/innovationcloudheader.PNG",
+			"/images/innovationcloud.PNG"
 		]
 	}
 	]
@@ -134,8 +137,6 @@ function displayContacts() {
 
 displayContacts();
 
-
-
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
@@ -149,15 +150,20 @@ function displayEducation() {
 for (school in education.schools) {
 	$("#education").append(HTMLschoolStart);
 	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		
 	var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 	var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
+
 	$(".education-entry:last").append(formattedSchoolNameDegree);
 	var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 	$(".education-entry:last").append(formattedSchoolDates);
 	var formattedSchoolCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
 	$(".education-entry:last").append(formattedSchoolCity);
 	var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-	$(".education-entry:last").append(formattedSchoolMajor);	
+	$(".education-entry:last").append(formattedSchoolMajor);
+	var formattedSchoolUrl = HTMLschoolUrl.replace("%data%", education.schools[school].url);
+	$(".education-entry:last").append(formattedSchoolUrl);
+
 }
 }
 

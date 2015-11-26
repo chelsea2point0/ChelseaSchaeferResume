@@ -24,9 +24,14 @@ h6 {
   padding: 0 5%;
 }
 
+#workExperience, #projects, #education {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
 h1 {
   font-size: 40px;
-  color: #33d63b;
+  color: #1199c3;
   line-height: 48px;
   display: inline;
 }
@@ -58,7 +63,6 @@ h3,
 h4,
 h5 {
   padding:10px 5%;
-
 }
 
 
@@ -105,7 +109,7 @@ a {
 }
 
 .orange {
-  background-color: #33d63b;
+  background-color: #1199c3;
   color: #4a4a4a;
 }
 
@@ -130,7 +134,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #050505;
+  background-color: #223C45;
 }
 
 .flex-box {
@@ -162,7 +166,7 @@ img {
 }
 
 span {
-  padding: 5px;
+  padding: 5px 5px 5px 20px;
   font-weight: bold;
   color: grey;
 }
