@@ -64,7 +64,7 @@ var work = {
 		"title": "Web Developer",
 		"dates": "July 2015 - Present",
 		"location": "Pine Hill Rd, Weare, NH",
-		"description": "Hired on contractual basis to update client's webpage. Maintained original webpage content but created a more visually appealing, user-friendly version using HTML, CSS, bootstrap and jQuery."
+		"description": "Contract position to update client's website. Maintained original webpage content but created a more visually appealing, user-friendly version using HTML, CSS, bootstrap and jQuery."
 	},
 	{
 		"employer": "Southern New Hampshire University",
@@ -93,22 +93,14 @@ var work = {
 var projects = {
 	"samples": [
 	{
-		"title": "REB/PAC Business Products webpage",
+		"title": "REB/PAC Business Products website",
 		"dates": "July - August 2015",
-		"description": "Used HTML/CSS, bootstrap framework and jQuery library to update client's webpage in order to create a better user experience and attract new customers",
-		"images": [
-			"/images/homepage.PNG",
-			"/images/contactpage.PNG"
-		]
+		"description": "Used HTML/CSS, bootstrap framework and jQuery library to update client's webpage in order to create a better user experience and attract new customers"
 	},
 	{
-		"title": "Innovation Cloud",
-		"dates": "July 2015",
-		"description": "Project from Codecademy.com. Mock business homepage that incorporates HTML/CSS, JavaScript and jQuery.",
-		"images": [
-			"/images/innovationcloudheader.PNG",
-			"/images/innovationcloud.PNG"
-		]
+		"title": "Invoice Manager",
+		"dates": "October 2015",
+		"description": "Project from JavaScript course at Nashua Community College. Invoice generated using HTML form and JavaScript"
 	}
 	]
 
@@ -161,9 +153,10 @@ for (school in education.schools) {
 	$(".education-entry:last").append(formattedSchoolCity);
 	var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 	$(".education-entry:last").append(formattedSchoolMajor);
+	/*
 	var formattedSchoolUrl = HTMLschoolUrl.replace("%data%", education.schools[school].url);
 	$(".education-entry:last").append(formattedSchoolUrl);
-
+	*/
 }
 }
 
@@ -228,14 +221,7 @@ projects.display = function() {
 
 	var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.samples[project].description);
 	$(".project-entry:last").append(formattedProjectDescription);
-	/*
-		if (projects.samples[project]).images.length > 0) {
-			for (image in projects.samples[project].images) {
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.samples[project].images[image]);
-				$(".project-entry:last").append(formattedImage);
-			}
-		}
-		*/
+
 	}
 };
 
