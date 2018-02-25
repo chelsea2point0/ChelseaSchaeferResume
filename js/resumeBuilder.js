@@ -20,9 +20,9 @@ var bio = {
 	},
 	"welcomeMessage" : "Thank you for visiting my resume. I look forward to speaking with you soon.",
 	"skills" : [
-		"HTML/CSS", " JavaScript", " Training", "Customer Service", "Attention to Detail"
+		"HTML/CSS", "JavaScript", "jQuery", "PHP", "Wordpress", "Git", "AWS", "Google Analytics", "SEO"
 		],
-	"bioPic" : "images/ChelseaSchaefer.jpg"
+	"bioPic" : "images/madone.jpg"
 };
 
 var education = {
@@ -60,11 +60,18 @@ var education = {
 var work = {
 	"jobs": [
 	{
-		"employer": "REB/PAC Business Products",
+		"employer": "Cynosure, Inc.",
 		"title": "Web Developer",
-		"dates": "July 2015 - Present",
-		"location": "Pine Hill Rd, Weare, NH",
-		"description": "Contract position to update client's website. Maintained original webpage content but created a more visually appealing, user-friendly version using HTML, CSS, bootstrap and jQuery."
+		"dates": "January 2018 - Present",
+		"location": "Carlisle Rd, Westford, MA",
+		"description": "Build and maintain multiple websites and web applications that propel digital marketing initiatives in the US and international markets. Track, interpret, and present website analytics to stakeholders to drive continuous improvements to the user experience and increase conversion rates."
+	},
+	{
+		"employer": "Cynosure, Inc.",
+		"title": "Junior Web Developer",
+		"dates": "January 2016 - January 2018",
+		"location": "Carlisle Rd, Westford, MA",
+		"description": "Maintain Corporate website as well as 50+ microsites, both domestic and international. Develop and maintain custom Wordpress Plugins and Themes. Deploy full-stack web apps."
 	},
 	{
 		"employer": "Southern New Hampshire University",
@@ -78,8 +85,8 @@ var work = {
 		"title": "Training Manager",
 		"dates": "July 2013 - August 2014",
 		"location": "South Commercial St, Manchester, NH",
-		"description": "Responsible for design and delivery of onboarding training to all Academic Advising staff. Collaborated with leadership team to ensure that training topics and methods aligned with department goals. Also maintained training materials and created training videos."	
-	},	
+		"description": "Responsible for design and delivery of onboarding training to all Academic Advising staff. Collaborated with leadership team to ensure that training topics and methods aligned with department goals. Also maintained training materials and created training videos."
+	},
 	{
 		"employer": "Southern New Hampshire University",
 		"title": "Academic Advisor",
@@ -92,16 +99,24 @@ var work = {
 
 var projects = {
 	"samples": [
-	{
-		"title": "REB/PAC Business Products website",
-		"dates": "July - August 2015",
-		"description": "Used HTML/CSS, bootstrap framework and jQuery library to update client's webpage in order to create a better user experience and attract new customers"
-	},
-	{
-		"title": "Invoice Manager",
-		"dates": "October 2015",
-		"description": "Project from JavaScript course at Nashua Community College. Invoice generated using HTML form and JavaScript"
-	}
+    	{
+    		"title": "New Hampshire Websites - Wordpress",
+    		"dates": "August 2017",
+    		"description": "Wordpress site with custom theme using Bootstrap Sass",
+            "url": "https://github.com/chelsea2point0/nhwebsites"
+    	},
+    	{
+    		"title": "Bridal Website - Wordpress",
+    		"dates": "June 2016",
+    		"description": "Wordpress site for wedding announcement and details",
+            "url": "https://github.com/chelsea2point0/bridal"
+    	},
+    	{
+    		"title": "Invoice Manager",
+    		"dates": "October 2015",
+    		"description": "Project from JavaScript course at Nashua Community College. Invoice generated using HTML form and JavaScript",
+            "url": "https://github.com/chelsea2point0/InvoiceManager"
+    	}
 	]
 
 };
@@ -142,7 +157,7 @@ function displayEducation() {
 for (school in education.schools) {
 	$("#education").append(HTMLschoolStart);
 	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-		
+
 	var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 	var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
 
@@ -181,7 +196,7 @@ displayWork();
 $(document).click(function(loc) {
 	var x = loc.pageX;
 	var y = loc.pageY;
-	
+
 	logClicks(x,y);
 });
 
@@ -202,7 +217,7 @@ function inName() {
 	console.log(nameArray);
 	nameArray[1] = nameArray[1].toUpperCase();
 	nameArray[0] = nameArray[0].slice(0,1).toUpperCase() + nameArray[0].slice(1).toLowerCase();
-	
+
 	return nameArray[0] +" "+ nameArray[1];
 }
 
@@ -213,8 +228,11 @@ projects.display = function() {
 	for (project in projects.samples) {
 	$("#projects").append(HTMLprojectStart);
 
+    var formattedProjectUrl = HTMLprojectUrl.replace("%data%", projects.samples[project].url);
+    $(".project-entry:last").append(formattedProjectUrl);
+
 	var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.samples[project].title);
-	$(".project-entry:last").append(formattedProjectTitle);
+	$(".project-url:last").html(formattedProjectTitle);
 
 	var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.samples[project].dates);
 	$(".project-entry:last").append(formattedProjectDates);
@@ -229,7 +247,3 @@ projects.display();
 
 // map
 $("#map-div").append(googleMap);
-
-
-
-
