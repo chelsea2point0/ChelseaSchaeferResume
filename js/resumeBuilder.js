@@ -116,7 +116,14 @@ var projects = {
     		"dates": "October 2015",
     		"description": "Project from JavaScript course at Nashua Community College. Invoice generated using HTML form and JavaScript",
             "url": "https://github.com/chelsea2point0/InvoiceManager"
+    	},
+    	{
+    		"title": "Task Master",
+    		"dates": "August 2015",
+    		"description": "This website allows users to add and remove items to a task list.",
+            "url": "https://github.com/chelsea2point0/TaskMaster"
     	}
+
 	]
 
 };
